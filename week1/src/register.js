@@ -13,7 +13,7 @@ registerForm.addEventListener("submit", (e) => {
   const terms = document.querySelector("#termsnconditions");
 
   // Validate Input
-  if (!name || !email || !password || !retype || !terms.checked) alert("tes"); // not empty
+  if (!name || !email || !password || !retype || !terms.checked) return; // not empty
   const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
   if (!passwordRegex.test(password)) return; // correct password format
   if (password !== retype) return; // password and retype password are the same
