@@ -4,7 +4,7 @@ function FlashcardList({ data, selectedId, onSelect }) {
   const flashcardListStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "20px",
+    gap: "50px",
     maxWidth: "1200px",
     margin: "0 auto",
     padding: "20px",

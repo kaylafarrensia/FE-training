@@ -1,38 +1,30 @@
 import { data } from "./data";
 import { useState } from "react";
-import Flashcard from "./flashcard";
 import FlashcardList from "./flashcardList";
+import Header from "./header";
 
 function App() {
   const appStyle = {
     fontFamily: "'Hanken Grotesk', sans-serif",
     color: "#ffffff",
-    background: "black",
+    backgroundColor: "black",
     minHeight: "100vh",
-    width: "100%",
-    margin: 0,
-    padding: "40px",
+    minWidth: "100vw",
     boxSizing: "border-box",
     textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+    overflowX: "hidden",
   };
+
   const [selectedId, setSelectedId] = useState(null);
   function handleToggle(id) {
     setSelectedId(id !== selectedId ? id : null);
   }
+
   return (
     <div className="container" style={appStyle}>
-      <h3 style={{ fontSize: "16px", color: "#D7D7D7" }}>
-        From Beginner to Advanced Questions
-      </h3>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-        alt="React Logo"
-        style={{ width: "68px", height: "61px" }}
-      />
-      <h1 style={{ fontSize: "48px" }}>The React Flash Cards.</h1>
-      <h4 style={{ fontSize: "16px", color: "#D7D7D7" }}>
-        Test your react knowledge by answering the flashcards below
-      </h4>
+      <Header />
       <FlashcardList
         data={data}
         selectedId={selectedId}
