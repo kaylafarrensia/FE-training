@@ -1,6 +1,10 @@
 import Task from "./task";
 
 function TaskList({ tasks, onDeleteTask, onToggleTask }) {
+  const sortedTasks = [...tasks].sort(
+    (a, b) => new Date(a.dueDate) - new Date(b.dueDate),
+  );
+
   return (
     <div>
       <ul
@@ -10,7 +14,7 @@ function TaskList({ tasks, onDeleteTask, onToggleTask }) {
           margin: "10px 0 0 25px",
         }}
       >
-        {tasks.map((task) => (
+        {sortedTasks.map((task) => (
           <Task
             task={task}
             onDeleteTask={onDeleteTask}

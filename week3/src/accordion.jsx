@@ -26,15 +26,16 @@ function Accordion({ label, tasks, onDeleteTask, onToggleTask }) {
         >
           {isOpen ? "-" : "+"}
         </button>
-        <span style={{ fontWeight: "700" }}> 🗓️ {label}</span>
+        <span style={{ fontSize: "15px", fontWeight: "700" }}> 🗓️ {label}</span>
         <span
           style={{
             marginLeft: "15px",
-            backgroundColor: "pink",
-            border: "1px solid pink",
+            backgroundColor: "#F6F6F6",
+            border: "1px solid #F6F6F6",
             borderRadius: "5px",
-            padding: "3px 8px",
+            padding: "2px 6px",
             fontWeight: "500",
+            fontSize: "14px",
           }}
         >
           {tasks.length}{" "}
